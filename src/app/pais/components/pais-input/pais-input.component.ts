@@ -17,8 +17,8 @@ export class PaisInputComponent  {
   constructor() { }
 
  buscar(){
-   console.log('hola');
-   console.log(this.termino);
+   /* console.log('hola');
+   console.log(this.termino); */
    this.onEnter.emit(this.termino);
    
  }
