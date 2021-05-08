@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { threadId } from 'worker_threads';
 import { Country } from '../../interfaces/pais.interface';
 import { PaisService } from '../../services/pais.service';
 
@@ -14,8 +15,9 @@ export class PorPaisComponent {
   paises: Country[] = [];
   constructor(private paisService: PaisService) { }
 
-  buscar() {
+  buscar( termino: string ) {
     this.hayError = false
+    this.termino = termino;
     console.log(this.termino);
     this.paisService.buscarPais(this.termino)
       .subscribe((paises) => {
