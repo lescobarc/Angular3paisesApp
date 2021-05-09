@@ -15,6 +15,8 @@ export class PaisInputComponent implements OnInit {
   @Output() onEnter: EventEmitter<string> = new EventEmitter();
   @Output() onDebounce: EventEmitter<string> = new EventEmitter();
 
+  @Input() placeholder: string = ""
+
   debouncer: Subject<string> = new Subject();
 
   termino: string=""
